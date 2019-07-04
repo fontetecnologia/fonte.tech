@@ -12,8 +12,8 @@ const Root = styled.div`
   min-height: 100vh;
   padding: 96px 5vw;
 
-  @media (min-width: 400px) {
-    padding: 96px 20vw;
+  @media (min-width: 900px) {
+    padding: 96px 10vw;
   }
 
   background: linear-gradient(

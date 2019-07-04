@@ -6,12 +6,13 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  max-width: 1024px;
   padding: 16px;
 
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 900px) {
     flex-direction: row;
 
     padding: 48px;
@@ -24,7 +25,7 @@ const CallToAction = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 400px) {
+  @media (min-width: 900px) {
     width: 45%;
   }
 `
@@ -34,7 +35,7 @@ const Line = styled.div`
   height: 2px;
   width: auto;
 
-  @media (min-width: 400px) {
+  @media (min-width: 900px) {
     margin: 0;
     height: auto;
     width: 2px;
@@ -49,7 +50,7 @@ const MailChimpForm = styled.form`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 400px) {
+  @media (min-width: 900px) {
     width: 45%;
   }
 `

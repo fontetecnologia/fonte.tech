@@ -12,8 +12,9 @@ const HeroTitle = styled.h1`
   text-align: center;
 
   margin-bottom: 48px;
+  max-width: 1024px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 900px) {
     margin-bottom: 0;
   }
 `
