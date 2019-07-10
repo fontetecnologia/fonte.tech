@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 import {Link as GatsbyLink} from 'gatsby'
 
-import Logo from '../../content/assets/ft-logo.svg'
+import logo from '../../content/assets/ft-logo.svg'
+import icon from '../../content/assets/ft-icon.svg'
 
 const Root = styled.header`
   position: fixed;
@@ -13,7 +14,7 @@ const Root = styled.header`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   height: 96px;
   padding: 16px;
@@ -21,8 +22,29 @@ const Root = styled.header`
   background-color: rgba(0, 0, 0, 0.85);
 `
 
-const StyledLogo = styled(Logo)`
+const Container = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   height: 100%;
+  width: 100%;
+
+  max-width: 1024px;
+`
+
+const StyledLogo = styled.div`
+  height: 100%;
+  width: 100%;
+
+  background-image: url(${icon});
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  @media (min-width: 900px) {
+    background-image: url(${logo});
+  }
 `
 
 const NavList = styled.ul`
@@ -35,7 +57,11 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   color: rgb(255, 255, 255);
-  margin-left: 32px;
+  margin-left: 24px;
+
+  @media (min-width: 900px) {
+    margin-left: 32px;
+  }
 `
 
 const Link = styled(GatsbyLink)`
@@ -54,23 +80,25 @@ const Link = styled(GatsbyLink)`
 const AppBar = () => {
   return (
     <Root>
-      <StyledLogo />
-      <nav>
-        <NavList>
-          <NavItem>
-            <Link to="/">Home</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/servicos">Serviços</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/blog">Blog</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/contato">Contato</Link>
-          </NavItem>
-        </NavList>
-      </nav>
+      <Container>
+        <StyledLogo />
+        <nav>
+          <NavList>
+            <NavItem>
+              <Link to="/">Home</Link>
+            </NavItem>
+            {/* <NavItem>
+              <Link to="/servicos">Serviços</Link>
+            </NavItem> */}
+            <NavItem>
+              <Link to="/blog">Blog</Link>
+            </NavItem>
+            {/* <NavItem>
+              <Link to="/contato">Contato</Link>
+            </NavItem> */}
+          </NavList>
+        </nav>
+      </Container>
     </Root>
   )
 }
